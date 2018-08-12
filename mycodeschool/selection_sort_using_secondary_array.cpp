@@ -5,9 +5,12 @@ Selection sort using two arrays
 
 */
 #include <iostream>
+#include "utility.h"
 using namespace std;
 
 const int MAXVALUE = 2147483647; //maximum value int can store
+const int arraySize = 10; 
+const int range = 100;
 
 static int minComparisonCounter = 0;
 static int sortCounter = 0;
@@ -55,9 +58,13 @@ void selectionSort(int A[], int n){
 
 int main(){
 	
-	int A[10] = {5,6,1,4,3,2,7,8,5,0};
-	selectionSort(A,10);
-	cout<<endl;
+	int *A = generateRandomArray(arraySize,range);
+	
+	printArray(A,arraySize);
+	selectionSort(A,arraySize);
+	
+	
+	
 	cout<<"minComparisonCounter - "<<minComparisonCounter<<endl;
 	cout<<"sortCounter - "<< sortCounter<<endl;
 	

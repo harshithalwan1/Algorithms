@@ -1,18 +1,17 @@
 /*
-
 https://www.youtube.com/watch?v=GUDLRan2DWM
-Slassic Selection sort 
-TODO - add comments and documentation
+Classic Selection sort 
 */
 #include <iostream>
+#include "utility.h"
 using namespace std;
 
-const int MAXSIZE = 10;
+const int arraySize = 10; // size of the array
+const int range = 100; // range of the elements in the array, 0 to range
 
 selectionSort(int A[],int n){
 	
-	int iMin;
-	int temp;
+	int iMin; //variable to store index of minimum element 
 	
 	for( int i = 0; i < n - 1; i++){
 		
@@ -26,11 +25,12 @@ selectionSort(int A[],int n){
 				
 			}
 			
-			temp = A[i];
-			A[i] = A[iMin];
-			A[iMin] = temp;
+			/*cout<<"Minimum element is :"<<A[iMin]<<endl; 
+			cout<<"Swapping "<<A[i] << " and "<< A[iMin]<<endl;*/
 			
-			
+			swap(A[i],A[iMin]);	
+			//printArray(A,n);
+			//cout<<endl;
 	}
 	
 	
@@ -39,15 +39,11 @@ selectionSort(int A[],int n){
 
 int main(){
 	
-	int A[MAXSIZE] = {5,6,1,4,3,2,7,8,5,0};
-	selectionSort(A,MAXSIZE);
-	
-	for(int i = 0; i<MAXSIZE;i++){
-		cout<<A[i]<< " ";
-	}
-	
-	
-	
+	int *A = generateRandomArray(arraySize,range);
+	printArray(A,arraySize);
+	selectionSort(A,arraySize);
+	printArray(A,arraySize);
+	delete A;
 	return 0;
 }
 
