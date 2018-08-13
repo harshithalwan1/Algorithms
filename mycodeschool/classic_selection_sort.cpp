@@ -2,7 +2,6 @@
 https://www.youtube.com/watch?v=GUDLRan2DWM
 Classic Selection sort 
 */
-#include <iostream>
 #include "utility.h"
 using namespace std;
 
