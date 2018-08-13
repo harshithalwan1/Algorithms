@@ -3,7 +3,6 @@ https://www.youtube.com/watch?v=GUDLRan2DWM
 Classic Selection sort 
 */
 #include "utility.h"
-using namespace std;
 
 const int arraySize = 10; // size of the array
 const int range = 100; // range of the elements in the array, 0 to range
@@ -42,7 +41,7 @@ int main(){
 	printArray(A,arraySize);
 	selectionSort(A,arraySize);
 	printArray(A,arraySize);
-	delete A;
+	delete[] A;
 	return 0;
 }
 
