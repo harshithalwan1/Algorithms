@@ -3,7 +3,7 @@ Bubble Sort
 */
 #include "utility.h"
 
-const int arraySize = 100;
+const int arraySize = 10;
 const int range = 100;
 
 void bubbleSort(int A[],int size){
