@@ -2,29 +2,49 @@
 1. Algorithmic Thinking, Peak Finding - https://www.youtube.com/watch?v=HtSuA80QTyo&t=1190s
 
 other resources - https://www.geeksforgeeks.org/find-a-peak-in-a-given-array/
+				  https://www.youtube.com/watch?v=NFvAD5na5oU
 
+TODO - Add documentation
 */
+#include "utility.h"
 
+const int arraySize = 10;
+const int range = 100;
 
-int findPeakLinearly(int *A, int size){
+int findPeakUtil(int *A, int low, int high, int size){
 	
-	for(int i = 0; i < size; i++) {
-		
-		if(A[i] >= A[i+1] && A[i] >=A[i-1])
-		{
-			return i;
-		}
-		
-	}
+	int mid = low + (high - low)/2;
 	
+	//if mid element is the peak, return peak
+	if(  ( mid == 0 || 
+	       A[mid-1] <= A[mid]) //check in left area 
+	       && 
+		 ( mid == size-1 || 
+		   A[mid+1] <= A[mid])) //check in right area
+		
+		return mid;
+	
+	//if mid-1 > mid, find for a peak in left subarray
+	else if(mid > 0 && A[mid-1] > A[mid])
+		return findPeakUtil(A,low,mid-1,size);
+	
+	//if mid+1 > mid, find for a peak in right subarray
+	else
+		return findPeakUtil(A,mid+1,high,size);
+		
+}
+
+int findPeak(int *A, int size){
+	
+	return findPeakUtil(A,0,size-1,size);
 	
 }
 
-#include <iostream>
-using namespace std;
 
 int main(){
-	
-	
+	int *A = generateRandomArray(arraySize,range);
+	printArray(A,arraySize);
+	int peak = findPeak(A,arraySize);
+	cout << "Peak found at Index : "<<peak;
 	return 0;
 }
