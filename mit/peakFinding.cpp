@@ -1,10 +1,11 @@
 /*
 1. Algorithmic Thinking, Peak Finding - https://www.youtube.com/watch?v=HtSuA80QTyo&t=1190s
 
-other resources - https://www.geeksforgeeks.org/find-a-peak-in-a-given-array/
-				  https://www.youtube.com/watch?v=NFvAD5na5oU
+Other resources - https://www.geeksforgeeks.org/find-a-peak-in-a-given-array/
+				- https://www.youtube.com/watch?v=NFvAD5na5oU
 
-TODO - Add documentation
+Complexity - O(log n)
+
 */
 #include "utility.h"
 
@@ -46,5 +47,6 @@ int main(){
 	printArray(A,arraySize);
 	int peak = findPeak(A,arraySize);
 	cout << "Peak found at Index : "<<peak;
+	delete[] A;
 	return 0;
 }
