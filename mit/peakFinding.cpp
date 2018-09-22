@@ -9,7 +9,7 @@ Complexity - O(log n)
 */
 #include "utility.h"
 
-const int arraySize = 10;
+const int arraySize = 20;
 const int range = 100;
 
 int findPeakUtil(int *A, int low, int high, int size){

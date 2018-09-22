@@ -38,8 +38,7 @@ int* generateRandomArray(int size, int range){
 	
 	for(int i = 0; i < size ; i++){
 		
-	 *(A+i) = rand() % range;
-	
+		*(A+i) = rand() % range;
 	}
 	
 	return A;
