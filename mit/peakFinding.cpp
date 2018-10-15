@@ -50,3 +50,4 @@ int main(){
 	delete[] A;
 	return 0;
 }
+// i think you overcomplicated a simple problem
