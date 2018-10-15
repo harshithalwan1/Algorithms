@@ -14,7 +14,7 @@ int main(){
 	
 	//declaring a array A
 	int A[MAXSIZE];
-	int comparisons = 0;
+	int comparisons = 0; //comparisons required to search the given number
 	
 	//Inserting random numbers
 	for(int i = 1;i<=MAXSIZE;i++){ A[i] = rand() % RANGE; }
