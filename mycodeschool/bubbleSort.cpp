@@ -31,3 +31,4 @@ int main(){
 	delete[] A;
 	return 0;
 }
+// comment krle bhai isme :)
